@@ -7,26 +7,38 @@ const CalculateAge = () => {
   
     const calculateYears = (birthDate, today) => {
       let years = today.getFullYear() - birthDate.getFullYear();
-      
+
       if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
         years--;
       }
       return years;
     };
 
+    const calculateMonths = (birthDate, today) => {
+        let months = today.getMonth() - birthDate.getMonth();
+        if (today.getDate() < birthDate.getDate()) {
+          months--;
+        }
+        if (months < 0) {
+          months += 12;
+        }
+        return months;
+      };
+
     const ageCalculate = () => {
         const birthDate = new Date(dob);
         const today = new Date();
     
         const years = calculateYears(birthDate, today);
+        const months = calculateMonths(birthDate, today);
     
         if (years >= 0) {
-          setAge(`${years} years`);
+          setAge(`${years} years ${months} months`);
         } 
         else {
           setAge("Invalid date");
         }
-      };
+    };
 
     const renderAge = () => {
         if (age) {
