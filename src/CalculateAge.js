@@ -23,7 +23,16 @@ const CalculateAge = () => {
           months += 12;
         }
         return months;
-      };
+    };
+
+    const calculateDays = (birthDate, today) => {
+        let days = today.getDate() - birthDate.getDate();
+        if (days < 0) {
+          const lastMonth = new Date(today.getFullYear(), today.getMonth()).getDate();
+          days += lastMonth;
+        }
+        return days;
+    };
 
     const ageCalculate = () => {
         const birthDate = new Date(dob);
@@ -31,9 +40,10 @@ const CalculateAge = () => {
     
         const years = calculateYears(birthDate, today);
         const months = calculateMonths(birthDate, today);
+        const days=calculateDays(birthDate,today)
     
         if (years >= 0) {
-          setAge(`${years} years ${months} months`);
+          setAge(`${years} years ${months} months and ${days} days old`);
         } 
         else {
           setAge("Invalid date");
