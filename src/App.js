@@ -1,7 +1,9 @@
 import React from "react";
+import CalculateAge  from "./CalculateAge";
 function App(){
   return(
-    <h2>App</h2>
+   
+    <CalculateAge />
   )
 
 }
