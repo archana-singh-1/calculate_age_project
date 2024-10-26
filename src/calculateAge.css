@@ -1,15 +1,18 @@
-
+body{
+    background-color: rgb(244, 244, 244);
+}
 
 .age-calculator {
     text-align: center;
     margin: auto;
     margin-top: 50px;
     font-family: Arial, sans-serif;
-    background-color: lightpink;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
     height: 500px;
     width: 500px;
-    border: solid 2px rgb(164, 175, 197);
-    border-radius: 4px;
+    border: solid 2px white;
+    border-radius: 8px;
 }
   
 .input-date {

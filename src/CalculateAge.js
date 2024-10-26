@@ -36,7 +36,9 @@ const CalculateAge = () => {
 
     const ageCalculate = () => {
         const birthDate = new Date(dob);
+        console.log(birthDate)
         const today = new Date();
+        console.log(today)
     
         const years = calculateYears(birthDate, today);
         const months = calculateMonths(birthDate, today);
