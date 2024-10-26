@@ -34,6 +34,14 @@ const CalculateAge = () => {
         return days;
     };
 
+    const calculateHours = (birthDate, today) => {
+        let hours = today.getHours() - birthDate.getHours();
+        if (hours < 0) {
+            hours += 24;
+          }
+          return hours;
+    };
+
     const calculateMinutes = (birthDate, today) => {
         let minutes = today.getMinutes() - birthDate.getMinutes();
         if (minutes < 0) {
@@ -59,11 +67,12 @@ const CalculateAge = () => {
         const years = calculateYears(birthDate, today);
         const months = calculateMonths(birthDate, today);
         const days=calculateDays(birthDate,today);
+        const hours=calculateHours(birthDate,today)
         const minutes=calculateMinutes(birthDate,today)
         const seconds=calculateSeconds(birthDate,today)
     
         if (years >= 0) {
-          setAge(`${years} years, ${months} months, ${days} days, ${minutes} minutes and ${seconds} seconds`);
+          setAge(`${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`);
         } 
         else {
           setAge("Invalid date");
