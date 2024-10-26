@@ -1,18 +1,22 @@
 body{
     background-color: rgb(244, 244, 244);
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
 }
 
 .age-calculator {
+    height: 300px;
+    width: 500px;
     text-align: center;
     margin: auto;
     margin-top: 50px;
     font-family: Arial, sans-serif;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
-    height: 500px;
-    width: 500px;
     border: solid 2px white;
     border-radius: 8px;
+    margin-top: 300px;
 }
   
 .input-date {
@@ -27,7 +31,7 @@ body{
 .calculate-button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #aaacc4;
+    background-color: #0a18af;
     color: white;
     border: none;
     border-radius: 5px;
@@ -46,3 +50,11 @@ body{
     color: #333;
 }
   
+.age-cal{
+    color: #ec5c28;
+    font-size: 30px;
+}
+
+.age-calcul{
+    color: #333;
+}

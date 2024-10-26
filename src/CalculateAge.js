@@ -34,6 +34,22 @@ const CalculateAge = () => {
         return days;
     };
 
+    const calculateMinutes = (birthDate, today) => {
+        let minutes = today.getMinutes() - birthDate.getMinutes();
+        if (minutes < 0) {
+          minutes += 60;
+        }
+        return minutes;
+    };
+
+    const calculateSeconds = (birthDate, today) => {
+        let seconds = today.getSeconds() - birthDate.getSeconds();
+        if (seconds < 0) {
+          seconds += 60;
+        }
+        return seconds;
+    };
+
     const ageCalculate = () => {
         const birthDate = new Date(dob);
         console.log(birthDate)
@@ -42,19 +58,22 @@ const CalculateAge = () => {
     
         const years = calculateYears(birthDate, today);
         const months = calculateMonths(birthDate, today);
-        const days=calculateDays(birthDate,today)
+        const days=calculateDays(birthDate,today);
+        const minutes=calculateMinutes(birthDate,today)
+        const seconds=calculateSeconds(birthDate,today)
     
         if (years >= 0) {
-          setAge(`${years} years ${months} months and ${days} days old`);
+          setAge(`${years} years, ${months} months, ${days} days, ${minutes} minutes and ${seconds} seconds`);
         } 
         else {
           setAge("Invalid date");
         }
+        setDob("");
     };
 
     const renderAge = () => {
         if (age) {
-          return <p>Your Age: {age}</p>;
+          return <p className="age-calcul">Your Age: {age}</p>;
         }
         return null; 
     };
@@ -63,7 +82,7 @@ const CalculateAge = () => {
     
   return (
     <div className="age-calculator">
-      <h1>Age Calculator</h1>
+      <h1 className="age-cal">Age Calculator</h1>
       <input
         type="date"
         value={dob}
